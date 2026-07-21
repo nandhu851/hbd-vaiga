@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Vaigha! 🎂</title>
+    <!-- Premium fonts & system emoji fallback stack -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #fff5f6;
+            --primary-pink: #ff758c;
+            --dark-text: #2d3748;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--dark-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 15px;
+        }
+
+        /* Premium mobile-app style container */
+        .mobile-card {
+            background: var(--card-bg);
+            width: 100%;
+            max-width: 400px;
+            min-height: 85vh;
+            border-radius: 32px;
+            box-shadow: 0 20px 45px rgba(255, 117, 140, 0.12);
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .screen {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .screen.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--primary-pink);
+            font-size: 2.3rem;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #4a5568;
+        }
+
+        /* Image Display Areas */
+        .photo-frame {
+            width: 100%;
+            max-width: 280px;
+            height: 280px;
+            margin: 20px 0;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+            background: #f7fafc;
+        }
+
+        /* Balloon Pop Mechanics */
+        .balloon-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .balloon {
+            width: 75px;
+            height: 90px;
+            background: var(--primary-pink);
+            border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.85rem;
+            position: relative;
+            transition: transform 0.1s ease;
+            box-shadow: inset -4px -4px 10px rgba(0,0,0,0.15);
+        }
+        .balloon:nth-child(2) { background: #ff7e5f; }
+        .balloon:nth-child(3) { background: #feb47b; }
+        .balloon:nth-child(4) { background: #ff6a00; }
+
+        .balloon::after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 34px;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 6px solid currentColor;
+        }
+
+        .balloon.popped {
+            visibility: hidden;
+            opacity: 0;
+            transform: scale(1.3);
+        }
+
+        /* The Scrollable Letter Styling */
+        .letter-box {
+            background: #fffbf7;
+            border: 1px dashed #e2e8f0;
+            border-radius: 18px;
+            padding: 20px 15px;
+            text-align: left;
+            margin: 15px 0;
+            max-height: 420px;
+            overflow-y: auto;
+            box-shadow: inset 0 0 12px rgba(0,0,0,0.01);
+        }
+
+        .letter-box p {
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+            color: #2d3748;
+        }
+
+        /* Premium Buttons */
+        .btn {
+            background: var(--primary-pink);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(255, 117, 140, 0.35);
+            transition: transform 0.1s ease;
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+            .envelope{
+
+width:220px;
+
+height:150px;
+
+background:#ff6f91;
+
+position:relative;
+
+margin-top:40px;
+
+border-radius:12px;
+
+cursor:pointer;
+
+box-shadow:0 15px 30px rgba(0,0,0,.2);
+
+transition:.3s;
+
+}
+
+.envelope:hover{
+
+transform:scale(1.05);
+
+}
+
+.flap{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:75px;
+
+background:#ff85a2;
+
+clip-path:polygon(0 0,100% 0,50% 100%);
+
+}
+
+.paper{
+
+position:absolute;
+
+bottom:10px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:180px;
+
+height:110px;
+
+background:white;
+
+border-radius:8px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#ff4d88;
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+        }
+    /* Emoji Rain */
+
+.emoji-rain{
+    position:fixed;
+    top:-50px;
+    pointer-events:none;
+    animation:fall linear infinite;
+    z-index:9999;
+    user-select:none;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-80px) rotate(0deg);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <div class="mobile-card">
+        
+        <!-- SCREEN 1: Welcome & First Photo -->
+        <div id="screen1" class="screen active">
+            <h1>Vaiga...! 🎂🎉</h1>
+            
+            <!-- IMAGE PLACEHOLDER: Replace src with your friend's image link -->
+            <img class="photo-frame" src="images/pht1.jpeg" alt="vaiga">
+            
+            <p>🌐💖 I made a little birthday surprise just for you! 🥹🎉</p>
+            <p style="font-size: 0.85rem; margin-top: 8px; color: #718096;">Open it whenever you have a few quiet minutes.</p>
+            
+            <button class="btn" style="margin-top: 15px;" onclick="nextScreen(2)">Start the Surprise ✨</button>
+        </div>
+
+        <!-- SCREEN 2: Interactive Balloon Pop -->
+        <div id="screen2" class="screen">
+            <h1>Pop to Open! 🎈</h1>
+            <p>Pop all 4 balloons to read your letter 🫶🏻</p>
+            
+            <div class="balloon-container">
+                <div class="balloon" onclick="popBalloon(this)">VAIGA</div>
+                <div class="balloon" onclick="popBalloon(this)">❤️</div>
+                <div class="balloon" onclick="popBalloon(this)">HBD</div>
+                <div class="balloon" onclick="popBalloon(this)">✨</div>
+            </div>
+        </div>
+
+<!-- SCREEN 3 : LETTER ENVELOPE -->
+
+<div id="screen3" class="screen">
+
+<h1>A Letter For You 💌</h1>
+
+<div class="envelope" onclick="nextScreen(4)">
+
+<div class="flap"></div>
+
+<div class="paper">
+
+💌
+
+<br><br>
+
+Tap to Open
+
+</div>
+
+</div>
+
+<p style="margin-top:50px;">
+I wrote something from my heart...
+❤️✨
+</p>
+
+</div>
+        <!-- SCREEN 3: Your Heartfelt Letter & Final Photo -->
+        <div id="screen4" class="screen">
+            <h1>To Vaiguzz ❤️🌸</h1>
+            
+<div class="letter">
+    
+    <h1>🎂 Happy Birthday, Vaiga! 🤍</h1>
+    
+    <p>
+        Sathyam paranjal nee ente life ilekk vannath valare pettan ayirunnu...
+        paksha athinekkal pettan nee ente heartil oru special place eduthu. 🥹❤️
+    </p>
+    
+    <h2>💖 Ente Swantham Aniyathi</h2>
+    
+    <p>
+        "Non-blood sister" enn parayunnathinu pakaram, nee ippo enik swantham
+        aniyathi thanne aanu. 🫂💖 Blood relation alla nammale family aakkunnath...
+        parasparam manassilakkalum care cheyyalum support cheyyalum aanu.
+        Athokke nee enik thannittundu.
+    </p>
+    
+    <h2>🫶 Ninte Support</h2>
+    
+    <p>
+        Enik enthu vishamam undengilum, enthu santhosham undengilum,
+        njan oru madiyum illathe ninnodu open ayi samsarikkam.
+        Athrayum comfort nee enik thannittundu. 💛
+        Njan weak aayalum nee ente koode ninnu support cheyyum enn
+        enik ariyam. Athu thanne oru valiya blessing aanu. ✨
+    </p>
+    
+    <h2>🌸 Ninte Santhosham</h2>
+    
+    <p>
+        Nee chirikkumbo enikkum santhosham thonnum.
+        Nee happy aayirikkumbo athu kaanan enikk ishtam. 😊
+    </p>
+    
+    <h2>🤍 Oru Promise</h2>
+    
+    <p>
+        Life il ethra busy aayalum, ethra distance vannalum,
+        nammade ee sibling bond orikkalum maararuth. 🤞❤️
+        Enikku eppozhum nee ente aniyathi thanne ayirikkum.
+    </p>
+    
+    <h2>🎉 Birthday Wishes</h2>
+    
+    <p>
+        Ee birthday ninte life il puthiya santhoshangalum,
+        nalla healthum, endless happinessum,
+        dreams ellam achieve cheyyanulla strengthum kondu varatte. 🌷✨
+        Nee deserve cheyyunnath ellam ninakku kittatte. 💫
+    </p>
+    
+    <h2>💌 Thank You</h2>
+    
+    <p>
+        Thank you da... ente life il vannathinum,
+        enne manassilakkiyathinum,
+        enne support cheythathinum,
+        oru real sister pole care cheythathinum. 🤍
+    </p>
+    
+    <p>
+        Stay the amazing person you are. Never change. 🌼
+    </p>
+    
+    <h2>❤️ Once Again...</h2>
+    
+    <p>
+        <strong>Happy Birthday, Vaiga! 🎂🥳❤️</strong>
+    </p>
+    
+    <p>
+        <em>With lots of love,<br>
+            Ninte Chettan 💙🫂</em>
+    </p>
+    
+</div>
+
+            <!-- IMAGE PLACEHOLDER: Replace src with a second nice photo -->
+            <img class="photo-frame" src="images/pht2.jpeg" alt="Devutty" style="height:140px;margin:10px 0 0 0;">
+        </div>
+
+    </div>
+
+    <script>
+        let popped = 0;
+        
+
+        function nextScreen(num) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById('screen' + num).classList.add('active');
+        }
+
+        function popBalloon(btn) {
+            if (!btn.classList.contains('popped')) {
+                btn.classList.add('popped');
+                popped++;
+                if (popped === 4) {
+                    setTimeout(() => { nextScreen(3); }, 400);
+                }
+            }
+        }
+   // ❤️ Emoji Rain ❤️
+
+const emojis = ["❤️","😍","😘","💝","💕","💖"];
+
+function createEmoji(){
+
+    const emoji = document.createElement("div");
+
+    emoji.className="emoji-rain";
+
+    emoji.innerHTML =
+        emojis[Math.floor(Math.random()*emojis.length)];
+
+    emoji.style.left=Math.random()*100+"vw";
+
+    emoji.style.fontSize=
+        (20+Math.random()*25)+"px";
+
+    emoji.style.animationDuration=
+        (4+Math.random()*4)+"s";
+
+    document.body.appendChild(emoji);
+
+    setTimeout(()=>{
+        emoji.remove();
+    },8000);
+
+}
+
+setInterval(createEmoji,250);
+    </script>
+</body>
+</html>
